@@ -1,5 +1,8 @@
 #include "Slav.h"
 #include <fstream>
+#include <ctime>
+#include <cstdlib>
+#include <iterator>
 
 using namespace std;
 
@@ -18,7 +21,7 @@ void Slav::init()
 
 Slav::Slav()
 {
-	static int amountOfNames = (init(), names.size());
+	static int amountOfNames = (init(), names.size()); //lazy initialization
 	_name = names[rand() % amountOfNames];
 	_id = _counter++;
 }
